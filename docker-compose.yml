@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  avito-bot:
+    build: .
+    container_name: avito-bot
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - CHECK_INTERVAL=${CHECK_INTERVAL:-300}
+      - RESULTS_LIMIT=${RESULTS_LIMIT:-10}
+    env_file:
+      - .env
+
+volumes:
+  data:
+  logs:

@@ -1,0 +1,15 @@
+# Telegram Bot API
+aiogram==3.3.0
+aiohttp==3.9.1
+
+# Configuration
+pydantic-settings==2.1.0
+
+# Utilities
+python-dotenv==1.0.0
+
+# Data processing
+pandas==2.1.4
+
+# Logging
+loguru==0.7.2

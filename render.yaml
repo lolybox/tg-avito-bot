@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: avito-telegram-bot
+    env: python
+    region: Frankfurt
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bots/main.py
+    healthCheckPath: /health
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: CHECK_INTERVAL
+        value: "300"
+      - key: RESULTS_LIMIT
+        value: "10"
